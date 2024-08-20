@@ -20,7 +20,7 @@ from langchain_google_genai import ChatGoogleGenerativeAI
 import os
 import pandas as pd
 
-st.title("image segmentation")
+st.title("Image segmentation and object analysis")
 
 load_dotenv()
 os.getenv("GOOGLE_API_KEY")
@@ -28,21 +28,21 @@ genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
 
 model = ChatGoogleGenerativeAI(model="gemini-pro",temperature=0.3)
 
-API_URL = "https://api-inference.huggingface.co/models/facebook/detr-resnet-50"
+detr = "https://api-inference.huggingface.co/models/facebook/detr-resnet-50"
 headers = {"Authorization": "Bearer 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"}
 
 def query(filename):
     with open(filename, "rb") as f:
         data = f.read()
-        response = requests.post(API_URL, headers=headers, data=data)
+        response = requests.post(detr, headers=headers, data=data)
     return response.json()
 
-API_URL2 = "https://api-inference.huggingface.co/models/microsoft/trocr-base-handwritten"
+trocr = "https://api-inference.huggingface.co/models/microsoft/trocr-base-handwritten"
 
 def text(filename):
     with open(filename, "rb") as f:
         data = f.read()
-    response = requests.post(API_URL2, headers=headers, data=data)
+    response = requests.post(trocr, headers=headers, data=data)
     return response.json()
 
 
