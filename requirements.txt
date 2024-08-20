@@ -1,7 +1,2 @@
 streamlit
 opencv-python
-requests
-dotenv
-google-generativeai
-langchain
-pandas
