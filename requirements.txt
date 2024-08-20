@@ -6,4 +6,4 @@ dotenv
 google-generativeai
 langchain
 pandas
-opencv-contrib-python-headless
+opencv-python-headless
