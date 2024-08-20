@@ -6,4 +6,5 @@ dotenv
 google-generativeai
 langchain
 pandas
+opencv-python
 
