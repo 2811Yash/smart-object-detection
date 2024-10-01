@@ -1,9 +1,0 @@
-streamlit
-PIL
-opencv-python
-requests
-dotenv
-google-generativeai
-langchain
-pandas
-opencv-contrib-python-headless
